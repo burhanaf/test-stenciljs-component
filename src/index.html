@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+    <link rel="stylesheet" href="/build/test-design-system.css">
+    <script type="module" src="/build/test-design-system.esm.js"></script>
+    <script nomodule src="/build/test-design-system.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h3>Modal</h3>
+      </div>
+      <div class="row space-between">
+        <test-button text="Open Modal" appearance="primary"></test-button>
+        <test-modal buttons='[{"text": "Confirm"}, {"text": "Cancel"}]' header="Hello Modal" appearance="primary">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem sunt expedita culpa consectetur. Eveniet eius, necessitatibus error corporis, maxime sequi sapiente facere aut sint at quae, nulla beatae voluptate atque.
+        </test-modal>
+      </div>
+    </div>
+  </body>
+  <!-- testing button -->
+  <!-- <script>
+    var btn = document.querySelector('#primary')
+    btn.addEventListener('click', function() {
+      alert('Hello from primary button!')
+    })
+  </script> -->
+  <!-- testing modal -->
+  <script>
+    var btn = document.querySelector('test-button');
+    var modal = document.querySelector('test-modal');
+
+    btn.addEventListener('click', function () {
+      modal.isopen = true;
+    });
+
+    modal.addEventListener('action', function() {
+      console.log('Confirm press');
+    });
+  </script>
+</html>
